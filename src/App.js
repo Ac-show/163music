@@ -1,11 +1,19 @@
-import logo from './logo.svg';
+import React from 'react';
+import { renderRoutes } from 'react-router-config';
 
-function App() {
+import ACAppHeader from 'components/163-header';
+import ACAppFooter from 'components/163-footer';
+
+import router from './router';
+import { HashRouter } from 'react-router-dom';
+
+export default function App() {
   return (
-    <div>
-      App
-    </div>
-  );
+    <HashRouter>
+      <ACAppHeader />
+      {renderRoutes(router)}
+      <ACAppFooter />
+    </HashRouter>
+  )
 }
 
-export default App;
